@@ -1,0 +1,719 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --accent-color: #3b82f6;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-color: #1e293b;
+    --heading-color: #0f172a;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --max-width: 1400px;
+    --danger-color: #dc2626;
+    --warning-color: #f59e0b;
+    --success-color: #059669;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.dashboard-container {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.hero-section {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('image1_home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+}
+
+.cta-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.cta-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.features-section {
+    padding: 6rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all var(--transition-speed);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.team-section {
+    background-color: white;
+    padding: 6rem 2rem;
+}
+
+.team-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+}
+
+.team-member h3 {
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.team-member p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.contact-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+footer {
+    background-color: var(--heading-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .dashboard-container {
+        padding: 0 1rem;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .label {
+    color: #5f6368;
+    margin-bottom: 0.5rem;
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-container {
+        padding: 0 1rem;
+    }
+}
+
+/*----Unique styles for dashboard.php ----*/
+
+    .main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: var(--max-width);
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2px;
+    }
+
+    /* Dashboard Container Styles */
+    .dashboard-container {
+        width: 100%;
+        margin: 2rem auto;
+    }
+
+    /* Metrics Grid Layout */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Metric Card Styles */
+    .metric-card {
+        background: var(--card-background);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: all var(--transition-speed);
+    }
+
+    .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    }
+
+    .metric-card h3 {
+        color: var(--heading-color);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+    }
+
+    button {
+        background-color: #2563eb;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #1d4ed8;
+    }
+    /* Chart Container Styles */
+    .chart-container {
+        background: var(--card-background);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        position: relative;
+        height: 500px !important;
+        width: relative;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+        transition: all var(--transition-speed);
+    }
+
+    /* Table Container Styles */
+    .table-container {
+        background: var(--card-background);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+        transition: all var(--transition-speed);
+    }
+
+    /* Hover Effects */
+    .chart-container:hover,
+    .table-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Table Styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+        background-color: var(--background-color);
+        color: var(--heading-color);
+        font-weight: 500;
+    }
+
+    tr:hover {
+        background-color: var(--background-color);
+    }
+
+
+/*----Unique styles for machines_productivity.php----*/
+    .category-selector {
+        margin: 2rem auto;
+        width: 100%;
+    }
+
+/*----Unique styles for QC_datay.php----*/
+    .filter-form { 
+        background: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .filter-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-item label {
+        margin-bottom: 0.5rem;
+        color: var(--heading-color);
+        font-weight: 500;
+    }
+
+    .filter-item select,
+    .filter-item input {
+        padding: 0.5rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        font-size: 0.875rem;
+    }
+
+    .metrics-summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .summary-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    
+    .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+/*----Unique styles for inventory.php----*/
+    .form-section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .input-group select, .input-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .message {
+        padding: 10px;
+        margin-top: 2rem;
+        border-radius: 4px;
+    }
+    
+    .success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .quantity-options {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .quantity-preset {
+        padding: 5px 10px;
+        background-color: #e5e7eb;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .quantity-preset:hover {
+        background-color: #d1d5db;
+    }
+    
+    .batch-section {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8fafc;
+        border-radius: 8px;
+    }
+
+    .status-badge {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+    }
+    
+    .status-in-progress {
+        background-color: #fef3c7;
+        color: #92400e;
+    }
+    
+    .status-completed {
+        background-color: #d1fae5;
+        color: #065f46;
+    }
+    
+    .status-paused {
+        background-color: #fee2e2;
+        color: #991b1b;
+    }
+
+/*----Unique styles for sensors_and_faults.php----*/
+
+    .table-wrapper {
+        display: flex;
+        justify-content: space-between; 
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    #sensors-page 
+    .table-container {
+        width: 48%;  /* Changed from 100% */
+    }
+
+/*----Unique styles for data_manipulation_deletion.php----*/
+
+    #deletion .main-container {
+        flex: 1;
+        max-width: var(--max-width);
+        width: 100%;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    #deletion .admin-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #deletion .admin-card {
+        background: var(--card-background);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    #deletion .data-count {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin: 1rem 0;
+    }
+
+    #deletion .danger-zone {
+        background: #fee2e2;
+        border: 2px solid var(--danger-color);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        margin-top: 2rem;
+    }
+    
+    #deletion .danger-zone h2 {
+        color: var(--danger-color);
+        margin-bottom: 1rem;
+    }
+    
+    #deletion .confirmation-box {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        margin: 2rem 0;
+    }
+
+    #deletion .delete-btn {
+        background-color: var(--danger-color);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all var(--transition-speed);
+    }
+    
+    #deletion .delete-btn:hover {
+        background-color: #b91c1c;
+        transform: translateY(-2px);
+    }
+    
+    #deletion .delete-btn:disabled {
+        background-color: #e5e7eb;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+/*----Unique styles for data_manipulation_deletion.php----*/
+
+    #addition .main-container {
+        flex: 1;
+        max-width: var(--max-width);
+        width: 100%;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    #addition .data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #addition .data-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    #addition .count {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin: 0.5rem 0;
+    }
+
+    #addition .generate-section {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        text-align: center;
+    }
+    
+    #addition .generate-btn {
+        background-color: var(--success-color);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: var(--border-radius);
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all var(--transition-speed);
+    }
+    
+    #addition .generate-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
